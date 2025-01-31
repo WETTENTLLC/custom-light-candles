@@ -73,6 +73,18 @@ nav ul li a:hover {
     display: block;
 }
 
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+
+
 .smoke-container {
     position: fixed;
     top: 0;
