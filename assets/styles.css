@@ -112,13 +112,5 @@
 shadow */
 }
 
-.floating-frame {
-    background: url("../assets/honeycomb-texture.png");
-    background-size: cover; /* Cover the entire frame */
-    background-repeat: repeat; /* Ensures the pattern tiles */
-    background-position: center;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
+
 
