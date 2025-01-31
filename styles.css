@@ -124,15 +124,22 @@ content: "";
 }
 
 .smoke-left, .smoke-right {
-    position: fixed; /* Ensures they stay on the sides */
+    position: fixed; /* Ensures they stay on the edges */
     top: 0;
-    height: 100vh; /* Stretches full height */
-    width: 120px; /* Adjust width for visibility */
+    height: 100vh; /* Stretches the full height */
+    width: 150px; /* Increase width for better visibility */
     background: url('../assets/smoke.gif') repeat-y;
-    background-size: cover;
-    z-index: -1; /* Keeps it behind content */
+    background-size: contain; /* Keeps the full smoke texture visible */
+    opacity: 0.8; /* Increase opacity for stronger visibility */
+    z-index: -5; /* Ensures it stays behind content */
     pointer-events: none; /* Prevents interaction issues */
 }
+
+.smoke-right {
+    right: 0;
+    left: auto;
+}
+
 
 #floating-frames {
     display: flex;
