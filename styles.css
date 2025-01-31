@@ -10,6 +10,13 @@ body {
     color: #fff;
 }
 
+header h1 {
+    text-align: center;
+    font-size: 32px;
+    color: white; /* Adjust as needed */
+    margin-bottom: 10px; /* Add spacing */
+}
+
 header {
     display: flex;
     flex-direction: column;  /* Stack elements vertically */
@@ -57,12 +64,16 @@ nav ul li a:hover {
     color: #f39c12;
 }
 
-.hero-image {
-    position: relative;
-    display: inline-block;
+.hero-image img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    
 }
 
-.hero-image::after {
+.hero-image {
+    display: flex;
+    align-items: center;
     content: "";
     position: relative;
     top: 0;
