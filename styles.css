@@ -81,7 +81,8 @@ nav ul li a:hover {
 
 
 
-content: "";
+.some-selector::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -91,7 +92,6 @@ content: "";
     filter: blur(10px); /* Adjust the blur effect */
     z-index: 1;
 }
-
 
     
 }
