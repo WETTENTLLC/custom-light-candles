@@ -102,10 +102,13 @@ content: "";
 .smoke-container {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    z-index: -10; /* Push behind everything */
     pointer-events: none;
 }
+
 
 .smoke {
     position: fixed;
@@ -124,24 +127,15 @@ content: "";
     animation: float 5s infinite;
 }
 
-.smoke-left {
-    position: absolute;
-    left: 0;
+.smoke-left, .smoke-right {
+    position: fixed; /* Ensures they stay on the sides */
     top: 0;
-    height: 100vh;
-    width: 100px; /* Adjust width as needed */
+    height: 100vh; /* Stretches full height */
+    width: 120px; /* Adjust width for visibility */
     background: url('../assets/smoke.gif') repeat-y;
     background-size: cover;
-}
-
-.smoke-right {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    width: 100px; /* Adjust width as needed */
-    background: url('../assets/smoke.gif') repeat-y;
-    background-size: cover;
+    z-index: -1; /* Keeps it behind content */
+    pointer-events: none; /* Prevents interaction issues */
 }
 
 #floating-frames {
