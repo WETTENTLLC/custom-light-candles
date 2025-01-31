@@ -100,7 +100,7 @@ nav ul li a:hover {
 
 .wick {
     position: absolute;
-    top: -30px;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
     width: 20px;
