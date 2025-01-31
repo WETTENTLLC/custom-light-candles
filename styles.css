@@ -11,34 +11,27 @@ body {
     padding-top: 120px;
 }
 
-header h1 {
-    text-align: center;
-    font-size: 32px;
-    color: white; /* Adjust as needed */
-    margin-bottom: 10px; /* Add spacing */
-}
-
 header {
     display: flex;
-    flex-direction: column;  /* Stack elements vertically */
-    align-items: center;     /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    text-align: center;      /* Ensures text is centered */
-    position: fixed; /* Ensures it's always visible */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100px;
     padding: 20px 0;
-    background: rgba(0, 0, 0, 0.9); /* Keeps it visible */
-    z-index: 1000; /* High value to stay on top */
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
 }
 
-#hero {
-    position: relative;
-    z-index: 500; /* Higher than most elements, lower than header */
+header h1 {
+    font-size: 32px;
+    color: white;
+    margin-bottom: 10px;
 }
-
 
 .logo {
     font-size: 24px;
@@ -52,7 +45,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px; /* Spacing between links */
+    margin: 0 15px;
 }
 
 nav ul li a {
@@ -68,32 +61,16 @@ nav ul li a:hover {
 
 .hero-image {
     display: flex;
-    justify-content: center; /* Center horizontally */
+    justify-content: center;
     align-items: center;
     width: 100%;
     margin: 0 auto;
 }
+
 .hero-image img {
-    max-width: 80%; /* Adjust width */
+    max-width: 80%;
     height: auto;
     display: block;
-}
-
-
-
-.some-selector::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0) 40%, rgba(255, 255, 255, 1) 100%);
-    filter: blur(10px); /* Adjust the blur effect */
-    z-index: 1;
-}
-
-    
 }
 
 .smoke-container {
@@ -102,32 +79,26 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: -10; /* Push behind everything */
+    z-index: -1;
     pointer-events: none;
 }
 
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-}
 .smoke-left, .smoke-right {
-    position: fixed; /* Ensures they stay on the edges */
+    position: fixed;
     top: 0;
-    height: 100vh; /* Stretches the full height */
-    width: 150px; /* Increase width for better visibility */
+    height: 100vh;
+    width: 150px;
     background: url('../assets/smoke.gif') repeat-y;
-    background-size: contain; /* Keeps the full smoke texture visible */
-    opacity: 0.8; /* Increase opacity for stronger visibility */
-    z-index: -5; /* Ensures it stays behind content */
-    pointer-events: none; /* Prevents interaction issues */
+    background-size: contain;
+    opacity: 0.8;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .smoke-right {
     right: 0;
     left: auto;
 }
-
 
 #floating-frames {
     display: flex;
@@ -146,30 +117,16 @@ nav ul li a:hover {
     text-align: center;
     padding: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
-    background: url("/assets/honeycomb-texture.png");
-    background-size: cover; /* Ensure it covers the frame */
-    background-repeat: repeat; /* Keeps the honeycomb pattern */
+    background: url("../assets/honeycomb-texture.png");
+    background-size: cover;
+    background-repeat: repeat;
     background-position: center;
-    border-radius: 10px;
-    padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
-
 
 .frame:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
-}
-
-@keyframes flicker {
-    0% { transform: translateX(-50%) rotate(-2deg) scale(1.2); }
-    50% { transform: translateX(-50%) rotate(2deg) scale(1.3); }
-    100% { transform: translateX(-50%) rotate(-2deg) scale(1.2); }
-}
-
-.frame:hover .wick {
-    animation: flicker 0.8s infinite alternate ease-in-out;
-    opacity: 1;
 }
 
 .wick {
@@ -180,10 +137,13 @@ nav ul li a:hover {
     width: 150px;
     max-height: 80px;
     opacity: 0;
-    transition: opacity 0.3s; transform 0.3s ease-in-out;
-    filter: drop-shadow(0px 0px 10px rgba(255, 200, 0, 0.8)); /* Glowing effect */
+    transition: opacity 0.3s, transform 0.3s ease-in-out;
+    filter: drop-shadow(0px 0px 10px rgba(255, 200, 0, 0.8));
 }
 
+.frame:hover .wick {
+    opacity: 1;
+}
 
 .nav-link {
     display: block;
@@ -201,8 +161,6 @@ nav ul li a:hover {
 }
 
 /* Additional Styles for New Sections */
-
-/* Build Your Own Candle Section */
 .build-your-candle {
     text-align: center;
     padding: 20px;
@@ -231,7 +189,6 @@ nav ul li a:hover {
     color: black;
 }
 
-/* Candle Categories */
 .candle-categories {
     display: flex;
     flex-wrap: wrap;
@@ -267,4 +224,3 @@ nav ul li a:hover {
     text-align: center;
     max-width: 200px;
 }
-
