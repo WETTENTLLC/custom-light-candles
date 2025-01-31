@@ -113,7 +113,7 @@ nav ul li a:hover {
     top: -65px;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
+    width: 150px;
     max-height: 80px;
     opacity: 0;
     transition: opacity 0.3s; transform 0.3s ease-in-out;
