@@ -27,16 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const items = document.querySelectorAll('.carousel-item');
         if (currentIndex < items.length - 1) {
             currentIndex++;
-            track.style.transform = `translateX(-${currentIndex * 
-260}px)`;
+            track.style.transform = `translateX(-${currentIndex * 260}px)`;
         }
     });
 
     prevButton.addEventListener('click', () => {
         if (currentIndex > 0) {
             currentIndex--;
-            track.style.transform = `translateX(-${currentIndex * 
-260}px)`;
+            track.style.transform = `translateX(-${currentIndex * 260}px)`;
         }
     });
 });
