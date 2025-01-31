@@ -11,6 +11,21 @@ body {
 }
 
 header {
+    position: fixed; /* Ensures it's always visible */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Keeps it visible */
+    z-index: 1000; /* High value to stay on top */
+}
+
+#hero {
+    position: relative;
+    z-index: 500; /* Higher than most elements, lower than header */
+}
+
+
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
