@@ -106,17 +106,6 @@ nav ul li a:hover {
     pointer-events: none;
 }
 
-
-.smoke {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 50px; 
-    height: 100%;
-    pointer-events: none;
-    z-index: -1; 
-}
-
 .smoke img {
     width: 100%;
     height: auto;
@@ -159,7 +148,7 @@ nav ul li a:hover {
     text-align: center;
     padding: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
-    background: url("../assets/honeycomb-texture.png");
+    background: url("/assets/honeycomb-texture.png");
     background-size: cover; /* Ensure it covers the frame */
     background-repeat: repeat; /* Keeps the honeycomb pattern */
     background-position: center;
@@ -182,6 +171,7 @@ nav ul li a:hover {
 
 .frame:hover .wick {
     animation: flicker 0.8s infinite alternate ease-in-out;
+    opacity: 1;
 }
 
 .wick {
@@ -196,9 +186,6 @@ nav ul li a:hover {
     filter: drop-shadow(0px 0px 10px rgba(255, 200, 0, 0.8)); /* Glowing effect */
 }
 
-.frame:hover .wick {
-    opacity: 1;
-}
 
 .nav-link {
     display: block;
