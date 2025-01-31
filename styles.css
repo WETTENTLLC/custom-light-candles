@@ -28,6 +28,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: 100px;
     padding: 20px 0;
     background: rgba(0, 0, 0, 0.9); /* Keeps it visible */
     z-index: 1000; /* High value to stay on top */
