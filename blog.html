@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid #f39c12;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f39c12;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        #blog-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #blog-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #f39c12;
+        }
+
+        .blog-post {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 111, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
+        }
+
+        .blog-post:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 111, 0, 0.5);
+        }
+
+        .blog-post h2 {
+            color: #f39c12;
+            margin-bottom: 10px;
+        }
+
+        .blog-post p {
+            line-height: 1.6;
+        }
+
+        .blog-post a {
+            color: #f39c12;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .blog-post a:hover {
+            color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Antoine Montgomery Candles</div>
+        <nav>
+            <ul>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="process.html">The Process</a></li>
+                <li><a href="benefits.html">Aromatherapy Benefits</a></li>
+                <li><a href="testimonials.html">Customer 
+Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="blog-section">
+        <h1>Latest Articles</h1>
+        <div class="blog-post">
+            <h2>The Art of Candle Making</h2>
+            <p>
+                Dive into the intricate process of crafting candles and 
+discover what makes Antoine Montgomery's candles unique.
+            </p>
+            <a href="#">Read more...</a>
+        </div>
+        <div class="blog-post">
+            <h2>Top 5 Scents for Relaxation</h2>
+            <p>
+                Explore the most soothing scents and how they can 
+transform your home into a haven of peace.
+            </p>
+            <a href="#">Read more...</a>
+        </div>
+        <div class="blog-post">
+            <h2>Why Custom Candles Are the Perfect Gift</h2>
+            <p>
+                Learn why a personalized candle is a thoughtful and 
+memorable gift for any occasion.
+            </p>
+            <a href="#">Read more...</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Antoine Montgomery Candles. All rights 
+reserved.</p>
+    </footer>
+</body>
+</html>
+
