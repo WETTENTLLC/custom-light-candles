@@ -11,10 +11,16 @@ body {
 }
 
 header {
+    display: flex;
+    flex-direction: column;  /* Stack elements vertically */
+    align-items: center;     /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center;      /* Ensures text is centered */
     position: fixed; /* Ensures it's always visible */
     top: 0;
     left: 0;
     width: 100%;
+    padding: 20px 0;
     background: rgba(0, 0, 0, 0.9); /* Keeps it visible */
     z-index: 1000; /* High value to stay on top */
 }
