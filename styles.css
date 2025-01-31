@@ -106,13 +106,11 @@ nav ul li a:hover {
     pointer-events: none;
 }
 
-.smoke img {
-    width: 100%;
-    height: auto;
-    opacity: 0.5;
-    animation: float 5s infinite;
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
 }
-
 .smoke-left, .smoke-right {
     position: fixed; /* Ensures they stay on the edges */
     top: 0;
