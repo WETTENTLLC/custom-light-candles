@@ -108,18 +108,40 @@ content: "";
 }
 
 .smoke {
-    position: absolute;
+    position: fixed;
     top: 0;
-    height: 100%;
-    opacity: 0.8;
-}
-
-.smoke.left {
     left: 0;
+    width: 50px; 
+    height: 100%;
+    pointer-events: none;
+    z-index: -1; 
 }
 
-.smoke.right {
+.smoke img {
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+    animation: float 5s infinite;
+}
+
+.smoke-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100px; /* Adjust width as needed */
+    background: url('../assets/smoke.gif') repeat-y;
+    background-size: cover;
+}
+
+.smoke-right {
+    position: absolute;
     right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100px; /* Adjust width as needed */
+    background: url('../assets/smoke.gif') repeat-y;
+    background-size: cover;
 }
 
 #floating-frames {
