@@ -1,81 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Process</title>
+    <title>The Candle-Making Process</title>
     <link rel="stylesheet" href="styles.css">
+    
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #000;
+            background: transparent !important; /* ✅ Matches homepage */
             color: #fff;
             margin: 0;
-            padding: 0;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            border-bottom: 2px solid #f39c12;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #f39c12;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #f39c12;
-        }
-
-        #process-section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        #process-section h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #f39c12;
-        }
-
-        .steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
+            padding-top: 120px; /* ✅ Prevents header overlap */
         }
 
         .step {
             width: 250px;
-            background: #fff;
             border-radius: 10px;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 0 15px rgba(255, 111, 0, 0.3);
+            background: url("assets/honeycomb-texture.png") no-repeat center center; /* ✅ Matches homepage */
+            background-size: cover;
+            box-shadow: 0px 4px 10px rgba(255, 255, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
@@ -84,35 +31,34 @@
             box-shadow: 0 0 30px rgba(255, 111, 0, 0.5);
         }
 
-        .step img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .step h3 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .step p {
-            color: #555;
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            position: relative;
+            z-index: 1;
+            color: #fff;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">Antoine Montgomery Candles</div>
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="process.html">The Process</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+        <div class="logo">Custom Light Candles</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="meet_antoine_montgomery.html">Meet Antoine Montgomery</a></li>
+                <li><a href="product_gallery.html">Create Your Own Candle Store</a></li>
+                <li><a href="process.html" class="active">The Process</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
+
+    <div class="smoke-container">
+        <div class="smoke-left"></div>
+        <div class="smoke-right"></div>
+    </div>
 
     <section id="process-section">
         <h1>The Candle-Making Process</h1>
@@ -120,20 +66,17 @@
             <div class="step">
                 <img src="assets/step1.jpg" alt="Step 1">
                 <h3>Step 1: Selecting the Ingredients</h3>
-                <p>Carefully choose high-quality wax, wicks, and 
-fragrances.</p>
+                <p>Carefully choose high-quality wax, wicks, and fragrances.</p>
             </div>
             <div class="step">
                 <img src="assets/step2.jpg" alt="Step 2">
                 <h3>Step 2: Melting the Wax</h3>
-                <p>Heat the wax to the perfect temperature for 
-blending.</p>
+                <p>Heat the wax to the perfect temperature for blending.</p>
             </div>
             <div class="step">
                 <img src="assets/step3.jpg" alt="Step 3">
                 <h3>Step 3: Adding the Fragrance</h3>
-                <p>Blend premium fragrances to create the perfect 
-aroma.</p>
+                <p>Blend premium fragrances to create the perfect aroma.</p>
             </div>
             <div class="step">
                 <img src="assets/step4.jpg" alt="Step 4">
@@ -149,9 +92,9 @@ aroma.</p>
     </section>
 
     <footer>
-        <p>&copy; 2025 Antoine Montgomery Candles. All rights 
-reserved.</p>
+        <p>&copy; 2025 Custom Light Candles. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
