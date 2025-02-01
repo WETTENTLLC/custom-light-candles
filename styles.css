@@ -7,8 +7,8 @@ body, h1, h2, p, ul, li, button, a {
 
 body {
     font-family: Arial, sans-serif;
-    background: rgba(0, 0, 0, 0.9);
-    color: #000000;
+    background: #000 !important; /* ✅ Sets full page background to black */
+    color: #fff; /* ✅ Ensures text remains visible */
     padding-top: 120px; /* Ensures content is not hidden under fixed header */
     margin: 0;
     overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
@@ -138,6 +138,8 @@ nav ul li a:hover {
     background-size: cover;
     background-repeat: repeat;
     background-position: center;
+    border: 2px solid #ccc;
+    border-radius: 20px 20px 50px 50px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
