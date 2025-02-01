@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-A-Scent - Essential Oils</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: transparent !important; /* ✅ Matches homepage */
+            color: #fff;
+            margin: 0;
+            padding-top: 120px; /* ✅ Prevents header overlap */
+        }
+
+        .benefit, .floating-frame {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            background: url("assets/honeycomb-texture.png") no-repeat center center; /* ✅ Matches homepage */
+            background-size: cover;
+            box-shadow: 0px 4px 10px rgba(255, 255, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .benefit:hover, .floating-frame:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 111, 0, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            position: relative;
+            z-index: 1;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Custom Light Candles</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="meet_antoine_montgomery.html">Meet Antoine Montgomery</a></li>
+                <li><a href="product_gallery.html">Create Your Own Candle Store</a></li>
+                <li><a href="process.html">The Process</a></li>
+                <li><a href="innoscent.html" class="active">In-A-Scent</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="smoke-container">
+        <div class="smoke-left"></div>
+        <div class="smoke-right"></div>
+    </div>
+
+    <section id="benefits-section">
+        <h1>Aromatherapy Benefits</h1>
+        <div class="benefit">
+            <h2>Relaxation and Stress Relief</h2>
+            <p>Antoine's candles are crafted with soothing essential oils, such as lavender and chamomile, which help to reduce stress and promote a sense of calm after a long day.</p>
+        </div>
+        <div class="benefit">
+            <h2>Enhanced Focus</h2>
+            <p>With scents like eucalyptus and peppermint, these candles are designed to clear your mind and improve concentration, making them perfect for work or study sessions.</p>
+        </div>
+    </section>
+
+    <section class="floating-frame">
+        <h2>Innoscent - Essential Oils</h2>
+        <p>Discover the therapeutic properties of essential oils. Choose oils to enhance your wellness or customize your candle.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Custom Light Candles. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
