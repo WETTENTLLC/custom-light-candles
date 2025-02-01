@@ -7,11 +7,12 @@ body, h1, h2, p, ul, li, button, a {
 
 body {
     font-family: Arial, sans-serif;
-    background: #000;
+    background: transparent !important;
     color: #fff;
     padding-top: 120px; /* Ensures content is not hidden under fixed header */
     margin: 0;
     overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+    flex-direction: column;
 }
 
 /* === Header === */
