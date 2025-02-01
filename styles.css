@@ -226,9 +226,3 @@ footer {
     }
 }
 
-#hero, #floating-frames, .frame {
-    background: none !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
-}
