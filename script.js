@@ -30,16 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /** === Carousel Functionality === **/
+    /** === Carousel Functionality (Fix for Missing Elements) === **/
     const track = document.querySelector('.carousel-track');
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
 
     if (track && prevButton && nextButton) {
         let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
 
         nextButton.addEventListener('click', () => {
-            const items = document.querySelectorAll('.carousel-item');
             if (currentIndex < items.length - 1) {
                 currentIndex++;
                 track.style.transform = `translateX(-${currentIndex * 260}px)`;
@@ -53,6 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     } else {
-        console.warn("Carousel elements not found. Skipping carousel script.");
+        console.warn("Carousel elements not found on this page. Skipping carousel script.");
     }
 });
