@@ -116,6 +116,7 @@ nav ul li a:hover {
 
 /* === Floating Frames Section === */
 #floating-frames {
+    background-color: transparent !important;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
