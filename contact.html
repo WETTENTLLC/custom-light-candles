@@ -5,134 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="styles.css">
+    
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #000;
+            background: transparent !important; /* ✅ Matches homepage */
             color: #fff;
             margin: 0;
-            padding: 0;
+            padding-top: 120px; /* ✅ Prevents header overlap */
         }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            border-bottom: 2px solid #f39c12;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #f39c12;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #f39c12;
-        }
-
-        #contact-section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        #contact-section h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #f39c12;
-        }
-
-        form {
+        .contact-form {
             max-width: 600px;
-            margin: 0 auto;
-            background: #fff;
+            margin: 20px auto;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(255, 111, 0, 0.3);
+            text-align: left;
+            background: url("assets/honeycomb-texture.png") no-repeat center center; /* ✅ Matches homepage */
+            background-size: cover;
+            box-shadow: 0px 4px 10px rgba(255, 255, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        form input, form textarea, form button {
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
+        .contact-form:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 111, 0, 0.5);
         }
 
-        form input:focus, form textarea:focus {
-            border-color: #f39c12;
-            outline: none;
-        }
-
-        form button {
-            background: #f39c12;
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            position: relative;
+            z-index: 1;
             color: #fff;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        form button:hover {
-            background: #e67e22;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">Antoine Montgomery Candles</div>
+        <div class="logo">Custom Light Candles</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="meet_antoine_montgomery.html">Meet Antoine Montgomery</a></li>
+                <li><a href="product_gallery.html">Create Your Own Candle Store</a></li>
                 <li><a href="process.html">The Process</a></li>
-                <li><a href="benefits.html">Aromatherapy Benefits</a></li>
-                <li><a href="testimonials.html">Customer 
-Testimonials</a></li>
+                <li><a href="innoscent.html">Innoscent</a></li>
+                <li><a href="testimonials.html">Customer Testimonials</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <div class="smoke-container">
+        <div class="smoke-left"></div>
+        <div class="smoke-right"></div>
+    </div>
+
     <section id="contact-section">
         <h1>Contact Us</h1>
-        <form action="#" method="post">
-            <input type="text" name="name" placeholder="Your Name" 
-required>
-            <input type="email" name="email" placeholder="Your Email" 
-required>
-            <input type="text" name="subject" placeholder="Subject" 
-required>
-            <textarea name="message" placeholder="Your Message" rows="5" 
-required></textarea>
+        <form class="contact-form" action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
             <button type="submit">Send Message</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2025 Antoine Montgomery Candles. All rights 
-reserved.</p>
+        <p>&copy; 2025 Custom Light Candles. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
