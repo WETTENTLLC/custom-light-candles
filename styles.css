@@ -133,7 +133,7 @@ nav ul li a:hover {
     text-align: center;
     padding: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
-    background: url("../assets/honeycomb-texture.png");
+    background: url("/assets/honeycomb-texture.png");
     background-size: cover;
     background-repeat: repeat;
     background-position: center;
