@@ -8,85 +8,32 @@
     
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin: 0;
-            padding-top: 120px; /* Prevents header overlap */
-            background: #000;
-            color: #fff;
             font-family: Arial, sans-serif;
-        }
-
-        .smoke-container {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .smoke-left, .smoke-right {
-            position: fixed;
-            top: 0;
-            height: 100vh;
-            width: 120px;
-            background: url('assets/smoke.gif') repeat-y;
-            background-size: cover;
-            opacity: 0.8;
-            z-index: -5;
-        }
-
-        .smoke-right {
-            right: 0;
-            left: auto;
+            background: transparent !important; /* ✅ Matches homepage */
+            color: #fff;
+            margin: 0;
+            padding-top: 120px; /* ✅ Prevents header overlap */
         }
 
         .frame {
-            background: rgba(0, 0, 0, 0.9);
+            width: 80%;
+            max-width: 600px;
             border: 2px solid #f39c12;
             border-radius: 20px;
             padding: 40px;
-            width: 80%;
-            max-width: 600px;
             text-align: center;
-            box-shadow: 0 0 20px rgba(255, 153, 51, 0.5);
-            position: relative;
-        }
-
-        .wick {
-            position: absolute;
-            top: -65px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            max-height: 80px;
-            opacity: 0;
-            transition: opacity 0.3s, transform 0.3s ease-in-out;
-            filter: drop-shadow(0px 0px 10px rgba(255, 200, 0, 0.8));
-        }
-
-        .image-container {
-            margin: 20px auto;
-            max-width: 300px;
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 10px;
+            background: url("assets/honeycomb-texture.png") no-repeat center center; /* ✅ Matches homepage */
+            background-size: cover;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         footer {
-            margin-top: 20px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            position: relative;
+            z-index: 1;
+            color: #fff;
         }
     </style>
 </head>
@@ -96,14 +43,15 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Products</a></li>
-                <li><a href="product_gallery.html">Gallery</a></li>
+                <li><a href="product_gallery.html">Create Your Own Candle Store</a></li>
+                <li><a href="process.html">The Process</a></li>
+                <li><a href="innoscent.html">Innoscent</a></li>
+                <li><a href="testimonials.html">Customer Testimonials</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Smoke Effect -->
     <div class="smoke-container">
         <div class="smoke-left"></div>
         <div class="smoke-right"></div>
@@ -119,21 +67,10 @@
                     <img src="assets/image-placeholder.jpg" alt="Antoine Montgomery - The Master Candle Maker">
                 </div>
                 
-                <p>
-                    Antoine Montgomery's journey into candle making began during a summer camp as a child. Captivated by the process of transforming liquid wax into solid candles, he found peace and fascination in this ancient craft. From learning to make taper candles at camp to eventually becoming a counselor teaching others, Antoine’s passion for candles only grew.
-                </p>
-                <p>
-                    After college, Antoine deepened his knowledge by working at a candle supply store in Seattle, one of the largest hubs for candle-making materials. There, he gained an insider’s perspective, learning the intricacies of waxes, fragrances, and dyes. Guided by experienced mentors, Antoine mastered blending fragrances and advanced techniques. His unique approach combines modern technology, such as 3D printing, with the timeless art of candle making.
-                </p>
-                <p>
-                    Certified in aromatherapy, Antoine creates clean-burning candles that provide therapeutic benefits. He carefully selects waxes like beeswax and incorporates fragrances such as lavender, jasmine, and frankincense to uplift spirits and promote positivity. His candles are more than products—they’re experiences rooted in wellness and symbolism.
-                </p>
-                <p>
-                    "Candles are central to life’s most significant moments," Antoine explains. "They symbolize energy and transformation, from birthdays to weddings, and even life and death. My goal is to create the best possible candles for these meaningful occasions."
-                </p>
-                <p>
-                    Despite working solo, Antoine’s reputation has spread across the West Coast, from Seattle to Oakland, Sacramento, and beyond. His dedication, creativity, and expertise have solidified his title as a true Master Candle Maker.
-                </p>
+                <p>Antoine Montgomery's journey into candle making began during a summer camp as a child...</p>
+                <p>After college, Antoine deepened his knowledge by working at a candle supply store in Seattle...</p>
+                <p>Certified in aromatherapy, Antoine creates clean-burning candles that provide therapeutic benefits...</p>
+                <p>"Candles are central to life’s most significant moments," Antoine explains...</p>
             </div>
         </section>
     </main>
@@ -145,4 +82,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
