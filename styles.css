@@ -7,7 +7,7 @@ body, h1, h2, p, ul, li, button, a {
 
 body {
     font-family: Arial, sans-serif;
-    background: transparent !important;
+    background: rgba(0, 0, 0, 0.9);
     color: #000000;
     padding-top: 120px; /* Ensures content is not hidden under fixed header */
     margin: 0;
