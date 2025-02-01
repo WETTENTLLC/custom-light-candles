@@ -4,66 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Application Form</title>
+    <link rel="stylesheet" href="styles.css">
+    
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            padding: 20px;
+            background: transparent !important; /* ✅ Matches homepage */
+            color: #fff;
+            margin: 0;
+            padding-top: 120px; /* ✅ Prevents header overlap */
         }
+
         .form-container {
             max-width: 500px;
             margin: 0 auto;
-            background: #fff;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .form-container h2 {
             text-align: center;
-            margin-bottom: 20px;
+            background: url("assets/honeycomb-texture.png") no-repeat center center; /* ✅ Matches homepage */
+            background-size: cover;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .form-group input[type="file"] {
-            padding: 5px;
-        }
-        .form-group button {
-            background-color: #007BFF;
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            position: relative;
+            z-index: 1;
             color: #fff;
-            border: none;
-            padding: 10px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .form-group button:hover {
-            background-color: #0056b3;
-        }
-        .form-error {
-            color: red;
-            font-size: 14px;
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">Custom Light Candles</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="meet_antoine_montgomery.html">Meet Antoine Montgomery</a></li>
+                <li><a href="product_gallery.html">Create Your Own Candle Store</a></li>
+                <li><a href="process.html">The Process</a></li>
+                <li><a href="innoscent.html">Innoscent</a></li>
+                <li><a href="testimonials.html">Customer Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="smoke-container">
+        <div class="smoke-left"></div>
+        <div class="smoke-right"></div>
+    </div>
+
     <div class="form-container">
         <h2>Job Application Form</h2>
-        <form action="submit_application.php" method="POST" 
-enctype="multipart/form-data">
+        <form action="submit_application.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -72,5 +68,20 @@ enctype="multipart/form-data">
                 <label for="email">Email Address:</label>
                 <input type="email" id="email" name="email" required>
             </div>
-            <div class="
+            <div class="form-group">
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit Application</button>
+            </div>
+        </form>
+    </div>
 
+    <footer>
+        <p>&copy; 2025 Custom Light Candles. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
