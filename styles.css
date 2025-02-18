@@ -64,32 +64,33 @@ nav ul li a:hover {
     color: #f39c12;
 }
 
-/* === Smoke Effect (Now Inside styles.css) === */
+/* === Smoke GIF Container === */
 .smoke-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            pointer-events: none;
-            z-index: -1;
-        }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    pointer-events: none; /* Ensure the smoke doesn't interfere with clicks */
+    z-index: 1; /* Place the smoke behind other content */
+}
 
-        .smoke-left, .smoke-right {
-            position: fixed;
-            top: 0;
-            height: 100vh;
-            width: 120px;
-            background: url('assets/smoke.gif') repeat-y;
-            background-size: cover;
-            opacity: 0.8;
-            z-index: -5;
-        }
+.smoke-container img.smoke {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    opacity: 0.8; /* Adjust opacity for a subtle effect */
+}
 
-        .smoke-right {
-            right: 0;
-            left: auto;
-        }
+.smoke.left {
+    align-self: flex-start;
+}
+
+.smoke.right {
+    align-self: flex-end;
+}
 
 /* === Hero Section === */
 #hero {
