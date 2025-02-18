@@ -75,7 +75,7 @@ nav ul li a:hover {
     justify-content: space-between;
     align-items: stretch; /* Stretch smoke GIFs to full height */
     pointer-events: none; /* Ensure smoke doesn't interfere with clicks */
-    z-index: -1; /* Place smoke behind all other content */
+    z-index: 1; /* Place smoke above the black background but below other content */
 }
 
 .smoke-container img.smoke {
@@ -98,7 +98,7 @@ nav ul li a:hover {
     text-align: center;
     padding: 80px 20px;
     position: relative;
-    z-index: 1; /* Keeps hero above smoke */
+    z-index: 2; /* Keeps hero above smoke */
     background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
 }
 
@@ -126,22 +126,24 @@ nav ul li a:hover {
     padding: 50px 20px;
     gap: 20px; /* Ensures proper spacing */
     position: relative;
-    z-index: 1; /* Keeps frames above smoke */
+    z-index: 2; /* Keeps frames above smoke */
     background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
 }
 
 .frame {
     width: 250px;
     height: 400px;
-    border: 2px solid #ccc;
+    border: 2px solid aqua;
     border-radius: 20px 20px 50px 50px;
     margin: 20px;
     position: relative;
     text-align: center;
     padding: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
-    border: 2px solid aqua; /* Keep the border for visibility */
+    background: url("assets/honeycomb-texture.png"); /* Octagon texture */
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -189,7 +191,7 @@ footer {
     padding: 20px;
     background: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
     position: relative;
-    z-index: 1; /* Ensures footer is above smoke */
+    z-index: 2; /* Ensures footer is above smoke */
 }
 
 /* === Responsive Design === */
