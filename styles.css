@@ -7,8 +7,8 @@ body, h1, h2, p, ul, li, button, a {
 
 body {
     font-family: Arial, sans-serif;
-    background: #000; /* ✅ Sets full page background to black */
-    color: #fff; /* ✅ Ensures text remains visible */
+    background: #000; /* Full page background is black */
+    color: #fff; /* Ensures text remains visible */
     padding-top: 120px; /* Ensures content is not hidden under fixed header */
     margin: 0;
     overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
@@ -28,8 +28,8 @@ header {
     width: 100%;
     height: 100px;
     padding: 20px 0;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 1000;
+    background: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+    z-index: 1000; /* Ensures header is above other content */
 }
 
 header h1 {
@@ -66,22 +66,23 @@ nav ul li a:hover {
 
 /* === Smoke GIF Container === */
 .smoke-container {
-    position: absolute;
+    position: fixed; /* Fix smoke to the viewport */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    pointer-events: none; /* Ensure the smoke doesn't interfere with clicks */
-    z-index: 1; /* Place the smoke behind other content */
+    align-items: stretch; /* Stretch smoke GIFs to full height */
+    pointer-events: none; /* Ensure smoke doesn't interfere with clicks */
+    z-index: -1; /* Place smoke behind all other content */
 }
 
 .smoke-container img.smoke {
-    width: 200px; /* Adjust size as needed */
-    height: auto;
-    opacity: 0.8; /* Adjust opacity for a subtle effect */
+    width: 200px; /* Adjust width as needed */
+    height: 100%; /* Stretch smoke GIFs to full height */
+    opacity: 0.5; /* Adjust opacity for a subtle effect */
+    object-fit: cover; /* Ensure the GIFs stretch properly */
 }
 
 .smoke.left {
@@ -98,6 +99,7 @@ nav ul li a:hover {
     padding: 80px 20px;
     position: relative;
     z-index: 1; /* Keeps hero above smoke */
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
 }
 
 .hero-image {
@@ -117,7 +119,6 @@ nav ul li a:hover {
 
 /* === Floating Frames Section === */
 #floating-frames {
-    background-color: transparent !important;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -126,6 +127,7 @@ nav ul li a:hover {
     gap: 20px; /* Ensures proper spacing */
     position: relative;
     z-index: 1; /* Keeps frames above smoke */
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
 }
 
 .frame {
@@ -138,38 +140,10 @@ nav ul li a:hover {
     text-align: center;
     padding: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
-    background: url("assets/honeycomb-texture.png");
-    background-size: cover;
-    background-repeat: repeat;
-    background-position: center;
-    border: 2px solid #ccc;
-    border-radius: 20px 20px 50px 50px;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    border: 2px solid aqua; /* Keep the border for visibility */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
-
-/* ✅ Ensure No Background on Floating Frames Container */
-#floating-frames, .frame-container, main, section {
-    background: none !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
-}
-
-/* === Make Backgrounds Transparent === */
-body {
-    background-color: transparent; /* Ensure the body background is transparent */
-}
-
-header, #hero, #floating-frames, footer {
-    background-color: transparent; /* Make all sections transparent */
-}
-
-/* Ensure the floating frames have a transparent background */
-.frame {
-    background-color: transparent;
-    border: 2px solid aqua; /* Keep the border for visibility */
-}
-
 
 .frame:hover {
     transform: scale(1.05);
@@ -213,7 +187,7 @@ header, #hero, #floating-frames, footer {
 footer {
     text-align: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
     position: relative;
     z-index: 1; /* Ensures footer is above smoke */
 }
@@ -242,4 +216,3 @@ footer {
         max-width: 90%;
     }
 }
-
