@@ -218,3 +218,44 @@ footer {
         max-width: 90%;
     }
 }
+
+/* === Main Content Styling Meet Page === */
+main {
+    padding: 20px;
+    position: relative;
+    z-index: 2; /* Ensure content is above the smoke */
+}
+
+#antoine-story .frame {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    border: 2px solid aqua;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: left;
+}
+
+#antoine-story h1 {
+    font-size: 2.5rem;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+#antoine-story h2 {
+    font-size: 1.8rem;
+    color: aqua;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#antoine-story p {
+    font-size: 1.1rem;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#antoine-story strong {
+    color: gold;
+}
