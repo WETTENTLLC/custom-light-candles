@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Light Candles - Product Page</title>
+    <title>Custom Light Candles - Product Gallery</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body style="background-color: #000; color: #fff; font-family: Arial, sans-serif;">
     <header>
         <div class="logo">Custom Light Candles</div>
         <nav>
@@ -16,47 +16,100 @@
                 <li><a href="product_gallery.html">Create Your Own Candle Store</a></li>
                 <li><a href="process.html">The Process</a></li>
                 <li><a href="benefits.html">Innoscent</a></li>
+                <li><a href="testimonials.html">Customer Testimonials</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Smoke GIFs on both sides -->
     <div class="smoke-container">
-        <div class="smoke-left"></div>
-        <div class="smoke-right"></div>
+        <img src="assets/smoke.gif" alt="Smoke" class="smoke left">
+        <img src="assets/smoke.gif" alt="Smoke" class="smoke right">
     </div>
 
     <main>
+        <!-- Master Candle Maker Section -->
         <section id="master-candle-maker">
-            <div class="frame">
-                <h1>Antoine Montgomery: The Grand Master Candle Maker</h1>
-                <p>Known for his precision, passion, and craftsmanship, Antoine creates exceptional candles that bring warmth and elegance to any space.</p>
+            <div style="width: 80%; max-width: 1200px; margin: 0 auto; padding: 20px; background: url('assets/octagon-texture.png') center/cover; border: 2px solid #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); border-radius: 10px; position: relative;">
+                <div style="background: rgba(0, 0, 0, 0.7); padding: 20px; border: 2px solid #fff; border-radius: 10px;">
+                    <h1>Antoine Montgomery: The Grand Master Candle Maker</h1>
+                    <p>Known for his precision, passion, and craftsmanship, Antoine creates exceptional candles that bring warmth and elegance to any space.</p>
+                </div>
             </div>
         </section>
 
-        <section id="build-your-own">
-            <div class="frame">
-                <h3>Build Your Own Candle</h3>
-                <form class="build-your-candle">
-                    <!-- Form Content Here -->
-                </form>
+        <!-- Build Your Own Candle Section -->
+        <section id="build-your-own" style="margin-top: 40px;">
+            <div style="width: 80%; max-width: 1200px; margin: 0 auto; padding: 20px; background: url('assets/octagon-texture.png') center/cover; border: 2px solid #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); border-radius: 10px; position: relative;">
+                <div style="background: rgba(0, 0, 0, 0.7); padding: 20px; border: 2px solid #fff; border-radius: 10px;">
+                    <h3>Build Your Own Candle</h3>
+                    <form class="build-your-candle">
+                        <label for="wax-type">Wax Type:</label>
+                        <select id="wax-type" name="wax-type">
+                            <option value="soy">Soy Wax</option>
+                            <option value="beeswax">Beeswax</option>
+                            <option value="coconut">Coconut Wax</option>
+                        </select>
+
+                        <label for="fragrance">Fragrance:</label>
+                        <select id="fragrance" name="fragrance">
+                            <option value="lavender">Lavender</option>
+                            <option value="vanilla">Vanilla</option>
+                            <option value="sandalwood">Sandalwood</option>
+                        </select>
+
+                        <label for="color">Candle Color:</label>
+                        <input type="color" id="color" name="color" value="#ffffff">
+
+                        <label for="size">Candle Size:</label>
+                        <input type="range" id="size" name="size" min="1" max="3">
+
+                        <button type="submit">Create Your Candle</button>
+                    </form>
+                </div>
             </div>
         </section>
 
-        <section id="on-sale-now">
-            <div class="frame">
-                <h2>On Sale Now</h2>
-                <div class="on-sale-products">
-                    <!-- Product Details Here -->
+        <!-- On Sale Now Section -->
+        <section id="on-sale-now" style="margin-top: 40px;">
+            <div style="width: 80%; max-width: 1200px; margin: 0 auto; padding: 20px; background: url('assets/octagon-texture.png') center/cover; border: 2px solid #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); border-radius: 10px; position: relative;">
+                <div style="background: rgba(0, 0, 0, 0.7); padding: 20px; border: 2px solid #fff; border-radius: 10px;">
+                    <h2>On Sale Now</h2>
+                    <div class="on-sale-products">
+                        <div class="product">
+                            <h4>Lavender Bliss</h4>
+                            <p>A soothing lavender-scented candle for relaxation.</p>
+                            <p><strong>$25.00</strong></p>
+                        </div>
+                        <div class="product">
+                            <h4>Vanilla Dream</h4>
+                            <p>A warm vanilla-scented candle for cozy evenings.</p>
+                            <p><strong>$22.00</strong></p>
+                        </div>
+                        <div class="product">
+                            <h4>Sandalwood Serenity</h4>
+                            <p>A rich sandalwood-scented candle for focus and calm.</p>
+                            <p><strong>$28.00</strong></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Custom Light Candles. All rights reserved.</p>
+        <center><p>&copy; 2025 Custom Light Candles. All rights reserved.</p></center>
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Wick Animation Keyframes -->
+    <style>
+        @keyframes flicker {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+    </style>
 </body>
 </html>
