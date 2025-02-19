@@ -91,6 +91,22 @@
         <!-- Owner Control Panel (Hidden by Default) -->
         <div id="owner-panel" class="owner-panel">
         <h3>Owner Control Panel</h3>
+  
+        <!-- Update/Delete Existing Products -->
+        <div class="update-section">
+        <h4>Update or Delete Existing Product</h4>
+        <label for="product-select">Select Product:</label>
+        <select id="product-select">
+        <option value="">-- Select a Product --</option>
+        <!-- Options will be dynamically populated -->
+    </select>
+    <button id="load-product">Load Product</button>
+    <button id="delete-product">Delete Product</button>
+  </div>
+
+        <!-- Add New Product -->
+        <div class="add-section">
+        <h4>Add New Product</h4>
         <form id="product-form">
         <label for="product-name">Product Name:</label>
         <input type="text" id="product-name" required>
@@ -102,10 +118,12 @@
         <input type="text" id="product-colors" placeholder="e.g., Red, Blue, Green">
         <label for="product-description">Description:</label>
         <textarea id="product-description"></textarea>
-        <button type="submit">Add/Update Product</button>
-      </form>
-      <button id="close-panel">Close Panel</button>
-    </div>
+      <button type="submit">Add/Update Product</button>
+    </form>
+  </div>
+
+  <button id="close-panel">Close Panel</button>
+</div>
                     </div>
                 </div>
             </div>
