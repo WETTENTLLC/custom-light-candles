@@ -70,6 +70,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const ownerSignInButton = document.getElementById("owner-sign-in");
     const productForm = document.getElementById("product-form");
     const closePanelButton = document.getElementById("close-panel");
+    const productSelect = document.getElementById("product-select");
+    const loadProductButton = document.getElementById("load-product");
+    const deleteProductButton = document.getElementById("delete-product");
+    const productNameInput = document.getElementById("product-name");
+    const productPriceInput = document.getElementById("product-price");
+    const productImageInput = document.getElementById("product-image");
+    const productColorsInput = document.getElementById("product-colors");
+    const productDescriptionInput = document.getElementById("product-description");
 
     // Function to display products
     function displayProducts(page = 1) {
@@ -104,39 +112,90 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("page-indicator").textContent = `Page ${page}`;
     }
 
-    // Function to add/update a product
+    // Function to populate the product dropdown
+    function populateProductDropdown() {
+        productSelect.innerHTML = '<option value="">-- Select a Product --</option>';
+        products.forEach((product, index) => {
+            const option = document.createElement("option");
+            option.value = index;
+            option.textContent = product.name;
+            productSelect.appendChild(option);
+        });
+    }
+
+    // Function to load product details into the form
+    function loadProductDetails(index) {
+        const product = products[index];
+        productNameInput.value = product.name;
+        productPriceInput.value = product.price;
+        productImageInput.value = product.image;
+        productColorsInput.value = product.colors || "";
+        productDescriptionInput.value = product.description || "";
+    }
+
+    // Event listener for "Load Product" button
+    loadProductButton.addEventListener("click", () => {
+        const selectedIndex = productSelect.value;
+        if (selectedIndex !== "") {
+            loadProductDetails(selectedIndex);
+        } else {
+            alert("Please select a product to load.");
+        }
+    });
+
+    // Event listener for "Delete Product" button
+    deleteProductButton.addEventListener("click", () => {
+        const selectedIndex = productSelect.value;
+        if (selectedIndex !== "") {
+            if (confirm("Are you sure you want to delete this product?")) {
+                products.splice(selectedIndex, 1);
+                localStorage.setItem("products", JSON.stringify(products));
+                populateProductDropdown();
+                productForm.reset();
+                displayProducts(currentPage);
+                alert("Product deleted successfully!");
+            }
+        } else {
+            alert("Please select a product to delete.");
+        }
+    });
+
+    // Function to handle form submission (add/update product)
     function handleProductFormSubmit(event) {
         event.preventDefault();
-        const name = document.getElementById("product-name").value;
-        const price = parseFloat(document.getElementById("product-price").value);
-        const image = document.getElementById("product-image").value;
-        const colors = document.getElementById("product-colors").value;
-        const description = document.getElementById("product-description").value;
+        const name = productNameInput.value;
+        const price = parseFloat(productPriceInput.value);
+        const image = productImageInput.value;
+        const colors = productColorsInput.value;
+        const description = productDescriptionInput.value;
 
         const product = { name, price, image, colors, description };
 
         // Check if product already exists (update) or add new
-        const existingIndex = products.findIndex(p => p.name === name);
-        if (existingIndex !== -1) {
-            products[existingIndex] = product; // Update existing product
+        const selectedIndex = productSelect.value;
+        if (selectedIndex !== "") {
+            // Update existing product
+            products[selectedIndex] = product;
+            alert("Product updated successfully!");
         } else {
-            products.push(product); // Add new product
+            // Add new product
+            products.push(product);
+            alert("Product added successfully!");
         }
 
         localStorage.setItem("products", JSON.stringify(products));
+        populateProductDropdown();
+        productForm.reset();
         displayProducts(currentPage);
-        closeOwnerPanel();
     }
 
-    // Function to add item to cart (placeholder)
-    window.addToCart = function(index, type) {
-        const product = products[index];
-        alert(`Added ${product.name} (${type}) to cart!`);
-    };
+    // Event listener for form submission
+    productForm.addEventListener("submit", handleProductFormSubmit);
 
     // Function to open owner panel
     function openOwnerPanel() {
         ownerPanel.style.display = "block";
+        populateProductDropdown();
     }
 
     // Function to close owner panel
@@ -146,15 +205,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Event Listeners
-    if (ownerSignInButton) {
-        ownerSignInButton.addEventListener("click", openOwnerPanel);
-    }
-    if (closePanelButton) {
-        closePanelButton.addEventListener("click", closeOwnerPanel);
-    }
-    if (productForm) {
-        productForm.addEventListener("submit", handleProductFormSubmit);
-    }
+    ownerSignInButton.addEventListener("click", openOwnerPanel);
+    closePanelButton.addEventListener("click", closeOwnerPanel);
 
     // Pagination buttons
     const nextPageButton = document.getElementById("next-page");
@@ -182,3 +234,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial load
     displayProducts();
 });
+
+// Function to add item to cart (placeholder)
+window.addToCart = function(index, type) {
+    const product = products[index];
+    alert(`Added ${product.name} (${type}) to cart!`);
+};
