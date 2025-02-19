@@ -569,3 +569,36 @@ main {
         margin-bottom: 20px;
     }
 }
+
+/* === Sticker Effect for Step Text === */
+.sticker {
+    background-color: #fff; /* White background for the sticker */
+    color: #333; /* Dark text color for contrast */
+    padding: 15px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transform: rotate(-2deg); /* Slight rotation for a hand-placed look */
+    margin-top: 15px;
+    border: 2px solid #f39c12; /* Accent border color */
+    position: relative;
+}
+
+.sticker::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #f39c12;
+    border-radius: 50%; /* Circular cut-out effect */
+    z-index: -1;
+}
+
+.sticker p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
