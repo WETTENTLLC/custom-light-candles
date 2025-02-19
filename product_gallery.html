@@ -72,58 +72,40 @@
         </section>
 
         <!-- On Sale Now Section -->
-        <section id="on-sale-now" style="margin-top: 40px;">
-            <div style="width: 80%; max-width: 1200px; margin: 0 auto; padding: 20px; background: url('assets/octagon-texture.png') center/cover; border: 2px solid #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); border-radius: 10px; position: relative;">
-                <div style="background: rgba(0, 0, 0, 0.7); padding: 20px; border: 2px solid #fff; border-radius: 10px;">
-                    <h2>On Sale Now</h2>
-                    <div class="on-sale-products" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-                        <!-- Candle 1 -->
-                        <div class="product" style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 10px; text-align: center; width: 200px;">
-                            <img src="assets/candle-lavender-bliss.jpg" alt="Lavender Bliss Candle" style="width: 100%; border-radius: 10px;">
-                            <h4>Lavender Bliss</h4>
-                            <p>A soothing lavender-scented candle for relaxation.</p>
-                            <p><strong>$25.00</strong></p>
-                        </div>
+        <section class="floating-frame" id="on-sale-now">
+        <h2>On Sale Now</h2>
+        <!-- Owner Sign-In Button -->
+        <button id="owner-sign-in" class="owner-button">Owner Sign In</button>
+        <!-- Product Grid -->
+        <div class="product-grid">
+        <!-- Product items will be dynamically loaded here -->
+      </div>
+        <!-- Pagination -->
+        <div class="pagination">
+        <button id="prev-page">Previous</button>
+        <span id="page-indicator">Page 1</span>
+        <button id="next-page">Next</button>
+      </div>
+    </section>
 
-                        <!-- Candle 2 -->
-                        <div class="product" style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 10px; text-align: center; width: 200px;">
-                            <img src="assets/candle-vanilla-dream.jpg" alt="Vanilla Dream Candle" style="width: 100%; border-radius: 10px;">
-                            <h4>Vanilla Dream</h4>
-                            <p>A warm vanilla-scented candle for cozy evenings.</p>
-                            <p><strong>$22.00</strong></p>
-                        </div>
-
-                        <!-- Candle 3 -->
-                        <div class="product" style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 10px; text-align: center; width: 200px;">
-                            <img src="assets/candle-sandalwood-serenity.jpg" alt="Sandalwood Serenity Candle" style="width: 100%; border-radius: 10px;">
-                            <h4>Sandalwood Serenity</h4>
-                            <p>A rich sandalwood-scented candle for focus and calm.</p>
-                            <p><strong>$28.00</strong></p>
-                        </div>
-
-                        <!-- Candle 4 -->
-                        <div class="product" style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 10px; text-align: center; width: 200px;">
-                            <img src="assets/candle-citrus-burst.jpg" alt="Citrus Burst Candle" style="width: 100%; border-radius: 10px;">
-                            <h4>Citrus Burst</h4>
-                            <p>An energizing citrus-scented candle for fresh mornings.</p>
-                            <p><strong>$20.00</strong></p>
-                        </div>
-
-                        <!-- Candle 5 -->
-                        <div class="product" style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 10px; text-align: center; width: 200px;">
-                            <img src="assets/candle-rose-petal.jpg" alt="Rose Petal Candle" style="width: 100%; border-radius: 10px;">
-                            <h4>Rose Petal</h4>
-                            <p>A romantic rose-scented candle for special moments.</p>
-                            <p><strong>$26.00</strong></p>
-                        </div>
-
-                        <!-- Candle 6 -->
-                        <div class="product" style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 10px; text-align: center; width: 200px;">
-                            <img src="assets/candle-amber-musk.jpg" alt="Amber Musk Candle" style="width: 100%; border-radius: 10px;">
-                            <h4>Amber Musk</h4>
-                            <p>A deep amber and musk-scented candle for sophistication.</p>
-                            <p><strong>$30.00</strong></p>
-                        </div>
+        <!-- Owner Control Panel (Hidden by Default) -->
+        <div id="owner-panel" class="owner-panel">
+        <h3>Owner Control Panel</h3>
+        <form id="product-form">
+        <label for="product-name">Product Name:</label>
+        <input type="text" id="product-name" required>
+        <label for="product-price">Price:</label>
+        <input type="number" id="product-price" step="0.01" required>
+        <label for="product-image">Image URL:</label>
+        <input type="url" id="product-image" required>
+        <label for="product-colors">Color Options (comma-separated):</label>
+        <input type="text" id="product-colors" placeholder="e.g., Red, Blue, Green">
+        <label for="product-description">Description:</label>
+        <textarea id="product-description"></textarea>
+        <button type="submit">Add/Update Product</button>
+      </form>
+      <button id="close-panel">Close Panel</button>
+    </div>
                     </div>
                 </div>
             </div>
