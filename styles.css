@@ -328,65 +328,66 @@ main {
 
 /* Owner Control Panel */
 .owner-panel {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #2c2c2c;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  width: 90%;
-  max-width: 500px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 90%;
+    max-width: 500px;
 }
 
 .owner-panel h3 {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .owner-panel h4 {
-  margin: 20px 0 10px;
-  color: #ff4081;
+    margin: 20px 0 10px;
+    color: #ff4081;
 }
 
 .owner-panel label {
-  display: block;
-  margin: 10px 0 5px;
+    display: block;
+    margin: 10px 0 5px;
 }
 
 .owner-panel input,
 .owner-panel textarea,
 .owner-panel select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid #444;
-  background-color: #444;
-  color: #fff;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #444;
+    color: #fff;
 }
 
 .owner-panel button {
-  background-color: #ff4081;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+    background-color: #ff4081;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .owner-panel button:hover {
-  background-color: #ff6f61;
+    background-color: #ff6f61;
 }
 
 .update-section,
 .add-section {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
+
 /* Product Grid */
 .product-grid {
     display: grid;
@@ -454,4 +455,73 @@ main {
 
 .pagination button:hover {
     background-color: #ff6f61;
+}
+
+/* === Process Section === */
+#process-section {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    position: relative;
+    z-index: 2; /* Ensures content is above the smoke */
+}
+
+#process-section h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #f39c12; /* Matches homepage accent color */
+}
+
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.step {
+    width: 250px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background: url("assets/honeycomb-texture.png") no-repeat center center; /* Matches homepage */
+    background-size: cover;
+    box-shadow: 0px 4px 10px rgba(255, 255, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.step:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 111, 0, 0.5);
+}
+
+.step img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.step h3 {
+    font-size: 1.5rem;
+    color: #f39c12; /* Matches homepage accent color */
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.5;
+}
+
+/* Responsive Design for Process Section */
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        width: 90%;
+        margin-bottom: 20px;
+    }
 }
