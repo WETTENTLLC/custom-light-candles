@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Custom Light Candles</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .cart-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .cart-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .cart-item-info {
+            flex-grow: 1;
+        }
+        
+        .cart-item-info h4 {
+            color: #f39c12;
+            margin: 0 0 5px 0;
+        }
+        
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            background: #f39c12;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .cart-total {
+            background: linear-gradient(135deg, rgba(243, 156, 18, 0.2), rgba(230, 126, 34, 0.2));
+            border: 2px solid #f39c12;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .total-amount {
+            font-size: 2rem;
+            color: #f39c12;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Custom Light Candles</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="cart.html" class="active">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="smoke-container">
+        <img src="assets/smoke.gif" alt="Smoke" class="smoke left">
+        <img src="assets/smoke.gif" alt="Smoke" class="smoke right">
+    </div>
+
+    <main class="cart-container">
+        <section id="cart-hero">
+            <div class="frame">
+                <h1>Shopping Cart</h1>
+                <p>Review your selected candles before checkout</p>
+            </div>
+        </section>
+
+        <section id="cart-items">
+            <div id="cart-container">
+                <!-- Cart items will be loaded here -->
+            </div>
+        </section>
+
+        <section id="cart-summary">
+            <div class="cart-total">
+                <h2>Order Summary</h2>
+                <div class="total-amount" id="total-amount">$0.00</div>
+                <button class="nav-link" onclick="checkout()">Proceed to Checkout</button>
+                <button class="nav-link" onclick="clearCart()" style="background: #e74c3c; margin-left: 10px;">Clear Cart</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Custom Light Candles. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCart();
+        });
+
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const container = document.getElementById('cart-container');
+            
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="frame" style="text-align: center; padding: 40px;">
+                        <h2>Your cart is empty</h2>
+                        <p>Browse our gallery to add some beautiful candles!</p>
+                        <a href="gallery.html" class="nav-link">Shop Now</a>
+                    </div>
+                `;
+                document.getElementById('total-amount').textContent = '$0.00';
+                return;
+            }
+            
+            let total = 0;
+            container.innerHTML = cart.map(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                return `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}" onerror="this.src='assets/image-placeholder.jpg'">
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <p>$${item.price.toFixed(2)} each</p>
+                            <p>${item.scent || item.category}</p>
+                        </div>
+                        <div class="cart-item-controls">
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                            <span style="color: #fff; margin: 0 10px; font-weight: bold;">${item.quantity}</span>
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                            <button class="nav-link" onclick="removeFromCart(${item.id})" style="background: #e74c3c; margin-left: 15px;">Remove</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            document.getElementById('total-amount').textContent = '$' + total.toFixed(2);
+        }
+
+        function updateQuantity(productId, change) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const item = cart.find(item => item.id === productId);
+            
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(item => item.id !== productId);
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart();
+            }
+        }
+
+        function removeFromCart(productId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+            showNotification('Item removed from cart', 'info');
+        }
+
+        function clearCart() {
+            if (confirm('Are you sure you want to clear your cart?')) {
+                localStorage.removeItem('cart');
+                loadCart();
+                showNotification('Cart cleared', 'info');
+            }
+        }
+
+        function checkout() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                showNotification('Your cart is empty!', 'error');
+                return;
+            }
+            
+            // Simulate checkout process
+            showNotification('Redirecting to checkout...', 'success');
+            setTimeout(() => {
+                alert('Checkout functionality would be implemented here with payment processing.');
+            }, 1000);
+        }
+
+        function showNotification(message, type = 'info') {
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            
+            Object.assign(notification.style, {
+                position: 'fixed',
+                top: '100px',
+                right: '20px',
+                padding: '15px 20px',
+                borderRadius: '8px',
+                color: '#fff',
+                fontWeight: 'bold',
+                zIndex: '10000',
+                maxWidth: '300px',
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
+                transform: 'translateX(100%)',
+                transition: 'transform 0.3s ease'
+            });
+            
+            const colors = {
+                success: '#27ae60',
+                error: '#e74c3c',
+                info: '#3498db'
+            };
+            notification.style.backgroundColor = colors[type] || colors.info;
+            
+            document.body.appendChild(notification);
+            setTimeout(() => notification.style.transform = 'translateX(0)', 100);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

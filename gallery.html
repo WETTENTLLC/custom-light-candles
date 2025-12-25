@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Custom Light Candles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Custom Light Candles</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="meet_antoine_montgomery.html">Meet Antoine Montgomery</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="process.html">The Process</a></li>
+                <li><a href="benefits.html">Benefits</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="smoke-container">
+        <img src="assets/smoke.gif" alt="Smoke" class="smoke left">
+        <img src="assets/smoke.gif" alt="Smoke" class="smoke right">
+    </div>
+
+    <main>
+        <section id="gallery-hero">
+            <div class="frame">
+                <h1>Antoine Montgomery: Master Candle Maker</h1>
+                <p>Experience precision, passion, and artistry in every handcrafted candle.</p>
+            </div>
+        </section>
+
+        <section id="product-gallery">
+            <div class="frame">
+                <h2>Our Candle Collection</h2>
+                <div class="product-grid" id="dynamic-products">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+                <div class="admin-link" style="text-align: center; margin-top: 20px;">
+                    <a href="login.html" class="nav-link">Admin Login</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="custom-order">
+            <div class="frame">
+                <h2>Create Your Custom Candle</h2>
+                <form id="custom-candle-form">
+                    <div class="form-group">
+                        <label for="scent">Scent:</label>
+                        <select id="scent" name="scent" required>
+                            <option value="">Choose a scent</option>
+                            <option value="lavender">Lavender</option>
+                            <option value="vanilla">Vanilla</option>
+                            <option value="eucalyptus">Eucalyptus</option>
+                            <option value="rose">Rose</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="wax-type">Wax Type:</label>
+                        <select id="wax-type" name="wax-type" required>
+                            <option value="">Choose wax type</option>
+                            <option value="soy">Soy Wax</option>
+                            <option value="beeswax">Beeswax</option>
+                            <option value="coconut">Coconut Wax</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="color">Color:</label>
+                        <input type="color" id="color" name="color" value="#ffffff">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Personal Message (Optional):</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Add a personal touch..."></textarea>
+                    </div>
+                    <button type="submit" class="nav-link">Order Custom Candle</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Custom Light Candles. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Load products from admin dashboard
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProducts();
+        });
+
+        function loadProducts() {
+            const products = JSON.parse(localStorage.getItem('products')) || [];
+            const container = document.getElementById('dynamic-products');
+            
+            if (products.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                        <p style="color: #fff; font-size: 1.2rem; margin-bottom: 20px;">No products available yet.</p>
+                        <p style="color: #00ffff;">Visit the admin dashboard to add products!</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = products.map(product => `
+                <div class="product-item">
+                    <img src="${product.image}" alt="${product.name}" onerror="this.src='assets/image-placeholder.jpg'">
+                    <h3>${product.name}</h3>
+                    <p class="product-price">$${product.price.toFixed(2)}</p>
+                    <p class="product-scent">${product.scent || product.category}</p>
+                    <p class="product-stock">${product.stock > 0 ? `In Stock (${product.stock})` : 'Out of Stock'}</p>
+                    <button class="nav-link" ${product.stock === 0 ? 'disabled' : ''} onclick="addToCart(${product.id})">
+                        ${product.stock > 0 ? 'Add to Cart' : 'Out of Stock'}
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function addToCart(productId) {
+            const products = JSON.parse(localStorage.getItem('products')) || [];
+            const product = products.find(p => p.id === productId);
+            
+            if (!product || product.stock === 0) {
+                showNotification('Product is out of stock!', 'error');
+                return;
+            }
+            
+            // Add to cart logic (simplified)
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            showNotification(`${product.name} added to cart!`, 'success');
+        }
+
+        function showNotification(message, type = 'info') {
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            
+            Object.assign(notification.style, {
+                position: 'fixed',
+                top: '100px',
+                right: '20px',
+                padding: '15px 20px',
+                borderRadius: '8px',
+                color: '#fff',
+                fontWeight: 'bold',
+                zIndex: '10000',
+                maxWidth: '300px',
+                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
+                transform: 'translateX(100%)',
+                transition: 'transform 0.3s ease'
+            });
+            
+            const colors = {
+                success: '#27ae60',
+                error: '#e74c3c',
+                info: '#3498db'
+            };
+            notification.style.backgroundColor = colors[type] || colors.info;
+            
+            document.body.appendChild(notification);
+            setTimeout(() => notification.style.transform = 'translateX(0)', 100);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
