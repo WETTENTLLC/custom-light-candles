@@ -88,7 +88,7 @@ class ProductManager {
                 <div class="product-info">
                     <h4>${product.name}</h4>
                     <p>$${product.price.toFixed(2)} • Stock: ${product.stock} • ${product.category}</p>
-                    <p>${product.scent ? 'Scent: ' + product.scent : ''}</p>
+                    <p>${product.scent ? 'In-A-Scent: ' + product.scent : ''}</p>
                 </div>
                 <div class="product-actions">
                     <button class="btn-edit" onclick="productManager.editProduct(${product.id})">Edit</button>
