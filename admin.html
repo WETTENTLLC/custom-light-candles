@@ -23,8 +23,51 @@
         
         .admin-sections {
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr;
             gap: 30px;
+        }
+        
+        .messages-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.9));
+            border: 2px solid #e74c3c;
+            border-radius: 15px;
+            padding: 30px;
+        }
+        
+        .message-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .message-from {
+            color: #f39c12;
+            font-weight: bold;
+        }
+        
+        .message-date {
+            color: #00ffff;
+            font-size: 12px;
+        }
+        
+        .message-subject {
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .message-content {
+            color: #ccc;
+            line-height: 1.4;
         }
         
         .add-product-form {
@@ -220,6 +263,13 @@
         </div>
 
         <div class="admin-sections">
+            <div class="messages-section">
+                <h2>Contact Messages</h2>
+                <div id="messages-container" style="max-height: 300px; overflow-y: auto; margin-bottom: 20px;">
+                    <p style="color: #fff; text-align: center;">No messages yet.</p>
+                </div>
+            </div>
+            
             <div class="add-product-form">
                 <h2>Add New Product</h2>
                 <form id="product-form">

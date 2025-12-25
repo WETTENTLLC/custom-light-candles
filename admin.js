@@ -2,12 +2,14 @@
 class ProductManager {
     constructor() {
         this.products = JSON.parse(localStorage.getItem('products')) || [];
+        this.messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
         this.init();
     }
 
     init() {
         this.setupEventListeners();
         this.renderProducts();
+        this.renderMessages();
         this.updateStats();
     }
 
@@ -96,6 +98,36 @@ class ProductManager {
                 </div>
             </div>
         `).join('');
+    }
+
+    renderMessages() {
+        const container = document.getElementById('messages-container');
+        
+        if (this.messages.length === 0) {
+            container.innerHTML = '<p style="color: #fff; text-align: center;">No messages yet.</p>';
+            return;
+        }
+
+        container.innerHTML = this.messages.map(message => `
+            <div class="message-item">
+                <div class="message-header">
+                    <span class="message-from">${message.name} (${message.email})</span>
+                    <span class="message-date">${new Date(message.date).toLocaleDateString()}</span>
+                </div>
+                <div class="message-subject">Subject: ${message.subject}</div>
+                <div class="message-content">${message.message}</div>
+            </div>
+        `).reverse().join('');
+    }
+
+    addMessage(messageData) {
+        this.messages.push({
+            ...messageData,
+            id: Date.now(),
+            date: new Date().toISOString()
+        });
+        localStorage.setItem('contactMessages', JSON.stringify(this.messages));
+        this.renderMessages();
     }
 
     editProduct(id) {
@@ -209,3 +241,4 @@ const productManager = new ProductManager();
 
 // Make products available globally for gallery page
 window.getProducts = () => productManager.exportProducts();
+window.addContactMessage = (messageData) => productManager.addMessage(messageData);

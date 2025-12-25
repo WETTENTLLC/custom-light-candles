@@ -111,6 +111,9 @@ function handleContactForm(e) {
     }
     
     // Simulate form submission
+    if (typeof window.addContactMessage === 'function') {
+        window.addContactMessage(contactData);
+    }
     showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
     e.target.reset();
 }
