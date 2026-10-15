@@ -15,3 +15,10 @@
 #hero{width:100%;margin-inline:auto;text-align:center}#hero>p:last-child{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px}#hero>p:last-child .nav-link{margin:0}
 @media(max-width:780px){.clc-home-product-gallery{grid-template-columns:1fr 1fr}.clc-home-product--large{grid-column:1/-1}.clc-home-product img{height:290px}}
 @media(max-width:520px){.clc-home-product-gallery{grid-template-columns:1fr}.clc-home-product--large{grid-column:auto}.clc-home-product img{height:300px}.clc-home-feature{padding:22px 15px}}
+
+/* Center homepage hero copy and actions as one coherent unit */
+body:has(#hero) #hero{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;box-sizing:border-box;margin-left:auto!important;margin-right:auto!important;padding-left:20px!important;padding-right:20px!important}
+body:has(#hero) #hero h1,body:has(#hero) #hero>p{width:100%;max-width:800px;margin-left:auto!important;margin-right:auto!important;text-align:center!important}
+body:has(#hero) #hero>p:last-child{display:flex!important;justify-content:center!important;align-items:center!important;flex-wrap:wrap!important;gap:14px!important}
+body:has(#hero) #hero>p:last-child .nav-link{display:inline-flex;align-items:center;justify-content:center;margin:0!important}
+@media(max-width:600px){body:has(#hero) #hero>p:last-child{flex-direction:column}body:has(#hero) #hero>p:last-child .nav-link{width:min(100%,310px)}}
