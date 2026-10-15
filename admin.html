@@ -221,6 +221,7 @@
     </style>
     <link rel="stylesheet" href="upgrade.css">
     <script defer src="upgrade.js"></script>
+<link rel="stylesheet" href="admin-media.css">
 </head>
 <body>
     <header>
@@ -274,8 +275,8 @@
             </div>
             
             <div class="add-product-form">
-                <h2>Add New Product</h2>
-                <form id="product-form">
+                <h2>Add New Product</h2><p class="clc-admin-warning"><strong>Preview-only product management:</strong> products, prices, stock and uploaded images are currently stored in this browser, not published to a shared store. We must connect secure authentication, shared storage and payments before this can run as a real online shop.</p>
+                <form id="product-form"><div id="clc-admin-media" class="clc-admin-media"><h3>Choose an Image from Your Candle Gallery</h3><p>Select one of the original photographs already in the site assets. You can also choose an image from your computer below.</p></div>
                     <div class="form-group">
                         <label for="product-image">Product Image</label>
                         <div class="image-upload" onclick="document.getElementById('image-input').click()">
@@ -340,7 +341,7 @@
         <p>&copy; 2025 Custom Light Candles. All rights reserved.</p>
     </footer>
 
-    <script src="admin.js"></script>
+    <script src="admin.js"></script><script defer src="admin-media.js"></script>
     <script>
         // Check authentication on page load
         document.addEventListener('DOMContentLoaded', function() {
