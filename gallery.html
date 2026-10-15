@@ -16,6 +16,7 @@
 <meta property="og:image" content="https://wettentllc.github.io/custom-light-candles/assets/hero-logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="collection.css">
+<link rel="stylesheet" href="innoscent.css">
 </head>
 <body>
     <header>
@@ -31,8 +32,8 @@
     <main>
         <section id="gallery-hero">
             <div class="frame">
-                <h1>Antoine Montgomery: Master Candle Maker</h1>
-                <p>Experience precision, passion, and artistry in every handcrafted candle.</p>
+                <h1>Handcrafted candles. Designed around you.</h1>
+                <p>Explore our authentic candle artwork, then create a personalized scent and candle design through Innoscent.</p>
             </div>
         </section>
 
@@ -48,41 +49,7 @@
             </div>
         </section>
 
-        <section id="custom-order">
-            <div class="frame">
-                <h2>Create Your Custom Candle</h2>
-                <form id="custom-candle-form">
-                    <div class="form-group">
-                        <label for="scent">Scent:</label>
-                        <select id="scent" name="scent" required>
-                            <option value="">Choose a scent</option>
-                            <option value="lavender">Lavender</option>
-                            <option value="vanilla">Vanilla</option>
-                            <option value="eucalyptus">Eucalyptus</option>
-                            <option value="rose">Rose</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="wax-type">Wax Type:</label>
-                        <select id="wax-type" name="wax-type" required>
-                            <option value="">Choose wax type</option>
-                            <option value="soy">Soy Wax</option>
-                            <option value="beeswax">Beeswax</option>
-                            <option value="coconut">Coconut Wax</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="color">Color:</label>
-                        <input type="color" id="color" name="color" value="#ffffff">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Personal Message (Optional):</label>
-                        <textarea id="message" name="message" rows="3" placeholder="Add a personal touch..."></textarea>
-                    </div>
-                    <button type="submit" class="nav-link">Order Custom Candle</button>
-                </form>
-            </div>
-        </section>
+<section id="innoscent" class="inno" aria-labelledby="inno-title"><p class="eyebrow">CUSTOM LIGHT CANDLES PRESENTS</p><h2 id="inno-title">INNOSCENT <span style="font-size:.55em;white-space:nowrap">(In-A-Scent)</span></h2><p class="intro">Your candle, your atmosphere, your story. Discover a scent direction, blend preferred notes, and describe the custom candle you'd love Antoine to create.</p><div class="inno-steps"><span>01 · Set the mood</span><span>02 · Shape the scent</span><span>03 · Create your request</span></div><div class="inno-grid"><form id="innoscent-form"><fieldset><legend>1. What should your candle feel like?</legend><div class="choices"><label><input type="radio" name="mood" value="Calm" checked> Calm</label><label><input type="radio" name="mood" value="Focus" > Focus</label><label><input type="radio" name="mood" value="Welcome" > Welcome</label><label><input type="radio" name="mood" value="Romance" > Romance</label><label><input type="radio" name="mood" value="Celebration" > Celebration</label><label><input type="radio" name="mood" value="Memory" > Memory</label></div><p class="inno-note">These are creative scent directions, not medical or therapeutic claims.</p></fieldset><fieldset><legend>2. Build your In-A-Scent</legend><p>Choose the notes you'd like to explore. Antoine will confirm which blends are available.</p><div class="choices"><label><input type="checkbox" name="notes" value="Lavender"> Lavender</label><label><input type="checkbox" name="notes" value="Rose"> Rose</label><label><input type="checkbox" name="notes" value="Vanilla"> Vanilla</label><label><input type="checkbox" name="notes" value="Citrus"> Citrus</label><label><input type="checkbox" name="notes" value="Eucalyptus"> Eucalyptus</label><label><input type="checkbox" name="notes" value="Mint"> Mint</label><label><input type="checkbox" name="notes" value="Cedarwood"> Cedarwood</label><label><input type="checkbox" name="notes" value="Amber"> Amber</label><label><input type="checkbox" name="notes" value="Spice"> Spice</label><label><input type="checkbox" name="notes" value="Unscented"> Unscented</label></div><label for="inno-story">Scent memory, allergies or notes to avoid</label><textarea id="inno-story" name="scent-story" rows="3" placeholder="Tell us about a place, memory, favorite perfume, or ingredients you would prefer to avoid."></textarea><label for="inno-strength">Preferred scent intensity</label><select id="inno-strength" name="strength"><option>Light and subtle</option><option selected>Balanced</option><option>Bold and noticeable</option><option>No fragrance</option></select></fieldset><fieldset><legend>3. Personalize the design</legend><label for="inno-design">Candle style</label><select id="inno-design" name="design"><option>Sculptural statement</option><option>Floral or botanical</option><option>Symbolic design</option><option>Classic pillar</option><option>Custom — let's discuss</option></select><label for="inno-wax">Preferred wax (availability to be confirmed)</label><select id="inno-wax" name="wax"><option>No preference</option><option>Soy</option><option>Beeswax</option><option>Coconut</option><option>Ask Antoine</option></select><label for="inno-color">Preferred color</label><input id="inno-color" type="text" name="color" placeholder="e.g., midnight blue with gold details"><label for="inno-qty">Estimated quantity</label><input id="inno-qty" type="number" min="1" max="500" value="1" name="quantity"><label for="inno-message">Occasion or personal message</label><textarea id="inno-message" name="message" rows="2" placeholder="Birthday gift, personal ritual, wedding..."></textarea></fieldset><fieldset><legend>4. Your contact details</legend><label for="inno-customer">Your name</label><input required id="inno-customer" name="customer" type="text" autocomplete="name"><label for="inno-email">Your email</label><input required id="inno-email" name="email" type="email" autocomplete="email"></fieldset></form><aside class="inno-preview"><img id="inno-preview-image" src="assets/475867438_1039888604822510_6140789692425430438_n.jpg" alt="Original lit Custom Light Candles creation"><div class="inno-preview-content"><h3>Your personalized candle brief</h3><pre id="inno-summary" aria-live="polite"></pre><p class="inno-note">This is a design inquiry, not checkout. No price or order is confirmed until Antoine reviews the request.</p><div class="inno-actions"><button type="button" class="nav-link" id="inno-copy">Copy My Candle Brief</button><button type="button" class="nav-link" id="inno-reset">Start Over</button><a class="nav-link" href="contact.html">Contact Antoine</a></div><p class="inno-status" id="inno-status" role="status"></p></div></aside></div></section>
     </main>
 
     <footer>
@@ -188,6 +155,6 @@
             }, 3000);
         }
     </script>
-<script defer src="collection.js"></script>
+<script defer src="collection.js"></script><script defer src="innoscent.js"></script>
 </body>
 </html>
