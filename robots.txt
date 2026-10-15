@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /custom-light-candles/admin.html
+Disallow: /custom-light-candles/login.html
+Sitemap: https://wettentllc.github.io/custom-light-candles/sitemap.xml
