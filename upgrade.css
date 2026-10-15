@@ -1,0 +1,27 @@
+/* Custom Light Candles cinematic upgrade—preserves original styles */
+:root{--flame:#e9b66e;--aqua:#66d9d9;--obsidian:#100f0d;--ivory:#ede6d9}
+html{scroll-behavior:smooth}body{background:radial-gradient(circle at 75% 12%,#34231a 0%,#100f0d 47%,#080909 100%);color:var(--ivory)}
+header{background:rgba(13,12,12,.9);border-bottom:1px solid #b98241;backdrop-filter:blur(18px)}
+.logo{color:var(--flame);letter-spacing:.06em}
+nav ul li a:hover,nav ul li a:focus-visible{color:var(--flame)}
+#hero{min-height:78vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,rgba(181,102,25,.19),transparent 67%);overflow:hidden}
+#hero:before{content:"";position:absolute;width:36rem;height:36rem;border:1px solid rgba(235,176,83,.18);border-radius:50%;box-shadow:0 0 100px rgba(245,151,35,.13);animation:breathe 8s ease-in-out infinite}
+#hero .hero-image img{max-width:min(38vw,320px);animation:float 6s ease-in-out infinite;filter:drop-shadow(0 0 25px rgba(239,153,49,.5))}
+#hero h1{font-family:Georgia,serif;font-size:clamp(2.5rem,6vw,5rem);color:var(--ivory);letter-spacing:-.035em;max-width:900px}
+#hero h1 em{color:var(--flame)}
+#hero p{max-width:680px;line-height:1.7;margin:0 auto 1.5rem}
+.frame{border:1px solid rgba(102,217,217,.55);background:linear-gradient(145deg,rgba(30,25,23,.94),rgba(10,12,13,.94));box-shadow:0 15px 50px rgba(0,0,0,.24);transition:transform .3s,box-shadow .3s}
+.frame:hover,.frame:focus-within{border-color:var(--flame);box-shadow:0 18px 50px rgba(205,127,38,.15)}
+.frame h2{color:var(--aqua)}.nav-link{background:linear-gradient(130deg,#ad7136,#e9b66e);color:#100f0d;font-weight:800}
+.smoke{opacity:.24;mix-blend-mode:screen}
+.academy-banner{position:relative;z-index:2;text-align:center;padding:5rem 1.5rem;background:linear-gradient(160deg,#20160f,#0d1416);border-block:1px solid #73542d}
+.academy-banner h2{font-family:Georgia,serif;color:var(--flame);font-size:clamp(2rem,4vw,3.5rem);margin-bottom:1rem}
+.academy-banner p{max-width:660px;margin:0 auto 1.5rem;line-height:1.75}
+.eyebrow{color:var(--aqua);text-transform:uppercase;letter-spacing:.2em;font-size:.75rem;font-weight:700}
+.class-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1.2rem;max-width:1100px;margin:2rem auto;padding:0 1rem}
+.class-grid .frame{min-height:270px;gap:1rem}
+.class-grid .frame p{flex-grow:1}
+input,textarea,select,button{font:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--aqua);outline-offset:4px}
+@keyframes float{50%{transform:translateY(-14px)}}@keyframes breathe{50%{transform:scale(1.08);opacity:.5}}
+@media(max-width:768px){header{position:relative;height:auto;flex-direction:column;gap:1rem}body{padding-top:0}nav ul{gap:.3rem}#hero{min-height:65vh;padding:4rem 1.25rem}#hero .hero-image img{max-width:220px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
